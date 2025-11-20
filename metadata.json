@@ -1,0 +1,7 @@
+{
+  "name": "Farmaceuta Polski PRO",
+  "description": "Aplikacja przygotowująca do egzaminu z języka polskiego dla farmaceutów, zgodna z rozporządzeniem MZ. Zawiera symulacje 4 części egzaminu generowane przez AI.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
