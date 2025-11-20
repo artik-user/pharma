@@ -1,16 +1,21 @@
-import { defineConfig, loadEnv } from 'vite';
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => {
-  // Load env file based on `mode` in the current working directory.
-  const env = loadEnv(mode, (process as any).cwd(), '');
-  
-  return {
-    plugins: [react()],
-    define: {
-      // API Key wpisany na stałe zgodnie z prośbą
-      'process.env.API_KEY': JSON.stringify("AIzaSyBfDIZfFffpfl2A4Y7C-pVuD_OMpbpmrwE")
+export default defineConfig({
+  plugins: [react()],
+  base: '/pharma/', // konieczne dla GitHub Pages
+  server: {
+    port: 5173, // domyślny port Vite, możesz zmienić
+    open: true   // automatycznie otwiera przeglądarkę
+  },
+  build: {
+    outDir: 'dist', // folder produkcyjny, gh-pages go używa
+    sourcemap: false
+  },
+  resolve: {
+    alias: {
+      '@': '/src' // jeśli używasz aliasu do src
     }
-  };
+  }
 });

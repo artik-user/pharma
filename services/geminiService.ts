@@ -1,4 +1,4 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { GoogleGenAI, Type, Schema } from "@google/genai";
 import { Difficulty, DictationContent, ListeningContent, ReadingContent, SimulationResponse, ChatMessage } from "../types";
 
 const apiKey = process.env.API_KEY || '';
